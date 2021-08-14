@@ -10,5 +10,5 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 ## Install Everything Else
 Executeing the following command in powershell with 'Admin' privlidges will install all of the software documented in the [Docker Onboarding](#) Powershell script.
 ```
-iex ((new-object net.webClient).DownloadString('https://raw.githubusercontent.com/dvdmrk/DockerPresentation/main/docker-presentation.ps1'))
+iex ((new-object net.webClient).DownloadString('https://raw.githubusercontent.com/dvdmrk/DockerPresentation/main/Scripts/docker-onboarding.ps1'))
 ```
