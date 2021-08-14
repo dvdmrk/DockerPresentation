@@ -15,6 +15,7 @@ choco install visualstudiocode -y --force # Any IDE will work
 choco install ssms -y --force # For SQL
 choco install heidisql -y --force # For PostgreSQL
 choco install mysql.workbench -y --force # For MySQL
+choco install git -y --force # VCS CLI for cloning Demo Repo
 
 
 
