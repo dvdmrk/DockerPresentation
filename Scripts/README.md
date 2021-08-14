@@ -50,7 +50,9 @@ iex ((new-object net.webClient).DownloadString('https://raw.githubusercontent.co
 ### Alternative
 
 Alternatively, if you're using your preconfigured development machine you can just install docker desktop. The chocolatey command to install this is: `choco install docker-desktop` the `-y` paramater will accept the download/ installation, the `--force` paramater will force it to install/ reinstall.
+
 <a name="file-structure"></a> 
+
 ## Inspecting the Project
 
 ![Docker is a platform for packaging an application and all of its dependencies including operating system into a single container called an image. This container lives longside other containers on top of the docker platform, host operating system, and physical hardware.](https://www.docker.com/sites/default/files/d8/2018-11/docker-containerized-appliction-blue-border_2.png "Docker Container Structure")
