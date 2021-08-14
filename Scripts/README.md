@@ -53,7 +53,7 @@ Alternatively, if you're using your preconfigured development machine you can ju
 
 
 
-## <a id="filestructure"></a> File Structure ##
+## File Structure
 
 ![Docker is a platform for packaging an application and all of its dependencies including operating system into a single container called an image. This container lives longside other containers on top of the docker platform, host operating system, and physical hardware.](https://www.docker.com/sites/default/files/d8/2018-11/docker-containerized-appliction-blue-border_2.png "Docker Container Structure")
 
