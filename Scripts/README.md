@@ -6,6 +6,9 @@ Before we can get started building containers and executing docker commands we n
 
 > Running linux containers requires a linux subsystem because linux containers cannot share a kernel with windows, this means windows 10 pro/ enterprise users should enable Hyper-V.
 
+### Install Docker
+[Docker Desktop](https://desktop.docker.com/win/stable/amd64/Docker%20Desktop%20Installer.exe) Download Link
+
 ### Install Chocolatey
 
 Executeing the following command in powershell with 'Admin' privlidges will install Chocolatey Package Manager.
@@ -13,15 +16,12 @@ Executeing the following command in powershell with 'Admin' privlidges will inst
 ```
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 ```
+
 ### Install Everything Else
 Executeing the following command in powershell with 'Admin' privlidges will install all of the software documented in the [Docker Onboarding](https://github.com/dvdmrk/DockerPresentation/blob/main/Scripts/docker-onboarding.ps1) Powershell script.
 
 <details>
 <summary>Tools Installed</summary>
-
-**Required**
-
-- Docker Desktop - Provides UI and CLI
 
 **Recomended**
 
@@ -77,7 +77,6 @@ If you're participating in the follow along demo, run `git clone ...` in a terma
 ```
 .
 ├── docker-compose.yml
-├── docker-compose.debug.yml
 ├── docker-compose.ci.build.yml
 ├── ApiProject
 │   ├── Dockerfile
