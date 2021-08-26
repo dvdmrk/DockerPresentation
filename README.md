@@ -53,11 +53,7 @@ iex ((new-object net.webClient).DownloadString('https://raw.githubusercontent.co
 
 Alternatively, if you're using your preconfigured development machine you can just install docker desktop. The chocolatey command to install this is: `choco install docker-desktop` the `-y` paramater will accept the download/ installation, the `--force` paramater will force it to install/ reinstall.
 
-### Clone the Repo
-
-If you're participating in the follow along demo, run `git clone https://github.com/dvdmrk/DockerPresentation` in a termal to copy the project contents from GitHub to your local machine.
-
-### Install VSCode Extensions
+## Install VSCode Extensions
 
 - **Omnisharp** 
   - Intellsense for C# .NET Core/ Standard/ Framework
@@ -66,5 +62,42 @@ If you're participating in the follow along demo, run `git clone https://github.
   - Container/ Image/ Registry/ Volume/ etc information
   - `code --install-extension ms-azuretools.vscode-docker`
 
-## Demo
+## Clone the Repo
+
+If you're participating in the follow along demo, run `git clone https://github.com/dvdmrk/DockerPresentation` in a termal to copy the project contents from GitHub to your local machine.
+
+## Cheat Sheet
+
+### Build Server
+
+- `docker image build -t dvdmrk/dockerrockstar-web:latest DockerRockstarSpa`
+- `docker image build -t dvdmrk/dockerrockstar-api:latest -f DockerRockstar.Api/Dockerfile .`
+- `docker images` or `docker image ls`
+- `docker image rm {{space delimited list of image name or ids}}`
+- `docker container run -d --name web -p 8082:80 dvdmrk/dockerrockstar-web:latest`
+- `docker ps` for running containers || `docker ps -a` for all containers || `docker container ls`
+- `docker container stop {{space delimitted list of container name/ ids}}`
+- `docker container start {{container name}}`
+
+### Container Registry
+
+- `docker login`
+- `docker image push dvdmrk/dockerrockstar-api:latest`
+- `docker image push dvdmrk/dockerrockstar-web:latest`
+
+### Deploy/ Scale
+
+- `docker-compose -v`
+- `docker-compose up`
+- `docker-compose -f docker-compose.ci.yml up`
+- `docker swarm init` `docker swarm leave`
+- `docker node ls`
+- `docker service create --name web -p 8082:80 --replicas 3 dockerrockstarweb`
+- `docker service scale web=5`
+- `docker stack deploy -c docker-compose.stack.yml dockerrockstar`
+- `docker stack ls`
+- `docker stack servcies dockerrockstar`
+- `docker stack ps dockerrockstar`
+- `docker stack rm dockerrockstar`
+
 
