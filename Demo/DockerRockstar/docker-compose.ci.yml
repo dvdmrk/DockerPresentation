@@ -7,9 +7,9 @@ services:
   ci:
     build:
       context: .
-      dockerFile: ./DockerRockstar.Tests/Dockerfile
+      dockerfile: ./DockerRockstar.Tests/Dockerfile
     command:
-	  [
-	    "dotnet",
-		"test"
-	  ]
+      [
+        "dotnet",
+        "test"
+      ]

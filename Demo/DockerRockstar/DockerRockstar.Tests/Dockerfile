@@ -5,7 +5,7 @@ WORKDIR /app
 
 FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build
 WORKDIR /src
-COPY ["DockerRockstar.Api/DockerRockstar.Tests.csproj", "DockerRockstar.Tests/"]
+COPY ["DockerRockstar.Tests/DockerRockstar.Tests.csproj", "DockerRockstar.Tests/"]
 COPY ["DockerRockstar.Api/DockerRockstar.Api.csproj", "DockerRockstar.Api/"]
 COPY ["DockerRockstar.Shared/DockerRockstar.Shared.csproj", "DockerRockstar.Shared/"]
 RUN dotnet restore "DockerRockstar.Api/DockerRockstar.Api.csproj"
