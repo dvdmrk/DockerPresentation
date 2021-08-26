@@ -1,0 +1,12 @@
+<p *ngIf="containerCounters"><em>Loading...</em></p>
+
+<table class="table" *ngIf="containerCounters">
+  <tr>
+    <td>Count</td>
+    <td>Container ID</td>
+  </tr>
+  <tr *ngFor="let container of containerCounters">
+    <td>{{container.count}}</td>
+    <td>{{container.containerId}}</td>
+  </tr>
+</table>

@@ -1,0 +1,16 @@
+name: .NET CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Execute tests
+      working-directory: .
+      run: docker-compose -f docker-compose.ci.yml up
+

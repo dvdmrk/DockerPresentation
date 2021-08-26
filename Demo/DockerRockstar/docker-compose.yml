@@ -1,0 +1,45 @@
+# Please refer https://aka.ms/HTTPSinContainer on how to setup an https developer certificate for your ASP .NET Core service.
+
+version: '3.4'
+
+services:
+  dockerrockstarapi:
+    image: dockerrockstarapi
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://0.0.0.0:5000
+    build:
+      context: .
+      dockerfile: DockerRockstar.Api/Dockerfile
+    ports:
+      - 5000:5000
+
+  dockerrockstarweb:
+    image: dockerrockstarweb
+    build:
+      context: DockerRockstarSpa
+      dockerfile: Dockerfile
+    ports:
+      - 8082:80
+
+  adminer:
+    image: adminer
+    restart: always
+    ports: 
+      - 8084:8080
+  
+  postgres:
+    image: postgres:13.4-alpine
+    ports:
+      - "5432"
+    restart: always
+    environment:
+      POSTGRES_USER: "admin"
+      POSTGRES_PASSWORD: "P@$$$$w0rd"
+      POSTGRES_DB: "DockerRockstarDB"
+    volumes: 
+      - db_volume:/var/lib/postgresql/data
+
+volumes:
+  db_volume:
+
